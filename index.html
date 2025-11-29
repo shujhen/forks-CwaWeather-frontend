@@ -304,7 +304,7 @@
             let clothText = "舒適穿搭";
             if (parseInt(maxTemp) >= 28) {
                 clothIcon = "🎽";
-                clothText = "短袖出發";
+                clothText = "宜穿短袖";
             } else if (parseInt(maxTemp) <= 20) {
                 clothIcon = "🧥";
                 clothText = "加件外套";
@@ -315,10 +315,13 @@
 
         function getTimePeriod(startTime) {
             const hour = new Date(startTime).getHours();
-            if (hour >= 5 && hour < 11) return "早晨";
+            if (hour >= 3 && hour < 6) return "清晨";
+            if (hour >= 6 && hour < 8) return "早晨";
+            if (hour >= 8 && hour < 11) return "上午";
             if (hour >= 11 && hour < 14) return "中午";
-            if (hour >= 14 && hour < 18) return "下午";
-            if (hour >= 18 && hour < 23) return "晚上";
+            if (hour >= 14 && hour < 17) return "下午";
+            if (hour >= 17 && hour < 19) return "黃昏";
+            if (hour >= 19 && hour < 23) return "晚上";
             return "深夜";
         }
 
